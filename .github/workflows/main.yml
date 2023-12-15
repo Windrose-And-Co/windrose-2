@@ -23,12 +23,7 @@ jobs:
     - name: Deploy to S3
       run: |
         aws s3 sync . s3://windroseandco.com --delete
-      # Replace './path/to/your/site' with the path to your website's build directory (if applicable)
-      # Replace 'your-s3-bucket-name' with your actual S3 bucket name
-      # The --delete flag removes files from the S3 bucket that are not present in the source directory
 
     - name: Invalidate CloudFront Distribution
       run: |
         aws cloudfront create-invalidation --distribution-id E25C4XTFI8JWRB --paths "/*"
-      # Replace 'YOUR_CLOUDFRONT_DISTRIBUTION_ID' with your actual CloudFront distribution ID
-      # This step is optional but recommended to ensure the updated content is served

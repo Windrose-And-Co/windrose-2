@@ -22,8 +22,8 @@ jobs:
 
     - name: Deploy to S3
       run: |
-        aws s3 sync . s3://windroseandco.com --delete --exclude '.git/*' --exclude '.github/*'
+        aws s3 sync . s3://windrose-site --delete --exclude '.git/*' --exclude '.github/*'
 
     - name: Invalidate CloudFront Distribution
       run: |
-        aws cloudfront create-invalidation --distribution-id E25C4XTFI8JWRB --paths "/*"
+        aws cloudfront create-invalidation --distribution-id E1VYLZ05ZC0ES --paths "/*"

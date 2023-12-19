@@ -23,7 +23,6 @@ jobs:
     - name: Deploy to S3
       run: |
         aws s3 sync . s3://windroseandco.com --delete --exclude '.git/*' --exclude '.github/*'
-      # The --exclude flags prevent the .git and .github directories from being uploaded
 
     - name: Invalidate CloudFront Distribution
       run: |
